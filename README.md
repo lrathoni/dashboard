@@ -1,0 +1,11 @@
+# Dashboard
+## Steps
+- Installez Node.js 
+- `npm install`
+
+Pour suivre les changements depuis le navigateur
+- `npm run start`
+
+L'appli devrait tourner sur le port 1234 (http://localhost:1234). sinon regardez ce que la commande vous indique
+
+version hyperapp : 2.0.4 (cf dependencies package.json à la racine)
