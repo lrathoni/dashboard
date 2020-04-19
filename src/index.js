@@ -8,10 +8,10 @@ import view from './components/view/view.js'
 import './styles/main.css'
 
 withLogger(app)(
-   state,
-   actions,
-   view,
-   document.body
+    state,
+    actions,
+    view,
+    document.body
 )
 
-console.log("coucou")
+console.log('coucou')
