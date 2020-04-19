@@ -62,16 +62,6 @@ module.exports = (env, argv) => {
         { // for css
           test: /\.css$/i,
           use: cssLoaders
-        },
-        { // for sass
-          test: /\.s[ac]ss$/i,
-          use: [
-            ...cssLoaders,
-            {
-              loader: 'sass-loader',
-              options: { sourceMap: devMode } // for dev debug
-            }
-          ]
         }
       ]
     },

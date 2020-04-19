@@ -1,6 +1,6 @@
 # Dashboard
 ## Steps
-- Installez Node.js 
+Installez Node.js 
 - `npm install`
 
 Pour suivre les changements depuis le navigateur
