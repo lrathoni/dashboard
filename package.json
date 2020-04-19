@@ -1,7 +1,7 @@
 {
   "name": "dahsboard",
   "version": "1.0.0",
-  "description": "hyperApp template for IMACs students",
+  "description": "dahsboard about movies and tv shows",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --color --mode development",
@@ -10,7 +10,7 @@
   "keywords": [
     "IMAC"
   ],
-  "author": "Enguerrand DE SMET",
+  "author": "IMAC 2",
   "license": "ISC",
   "dependencies": {
     "@hyperapp/logger": "^0.5.0",
