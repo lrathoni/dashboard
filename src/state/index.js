@@ -12,18 +12,54 @@ export default {
     year:'',
     popularity:''
   },
-  directorsList: {
-    'James Cameron': 2710,
-    'Wes Anderson': 5655,
-    'Michael Bay': 865,
-    'Luc Besson': 59,
-    'Danny Boyle': 2034,
-    'Christopher Nolan': 525,
-    'Stanley Kubrick': 240,
-    'David Lynch': 5602,
-    'David Fincher': 7467,
-    'Jean-Luc Godard': 3776,
-    'Peter Jackson': 108,
-    'Rocco Siffredi': 7694
-  }
+  directorsList :[ 
+    {
+      name: 'James Cameron',
+      id: 2710
+    },
+    {
+      name: 'Wes Anderson',
+      id: 5655
+    },
+    {
+      name: 'Michael Bay', 
+      id: 865
+    },
+    {
+      name: 'Luc Besson',
+      id: 59
+    },
+    {
+      name: 'Danny Boyle',
+      id: 2034
+    },
+    {
+     name: 'Christopher Nolan',
+     id: 525 
+    },
+    {
+      name:'Stanley Kubrick',
+      id: 240
+    },
+    {
+      name: 'David Lynch',
+      id: 5602
+    },
+    {
+      name: 'David Fincher',
+      id: 7467
+    },
+    {
+      name: 'Jean-Luc Godard',
+      id: 3776
+    },
+    {
+      name: 'Peter Jackson',
+      id:108
+    },
+    {
+      name: 'Rocco Siffredi',
+      id: 7694
+    }
+  ]
 }
