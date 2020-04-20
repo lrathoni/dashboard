@@ -12,7 +12,7 @@ export default {
     year:'',
     popularity:''
   },
-  directorslist: {
+  directorsList: {
     'James Cameron': 2710,
     'Wes Anderson': 5655,
     'Michael Bay': 865,
