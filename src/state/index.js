@@ -1,16 +1,16 @@
 export default {
-  Director = {
-    id:'';
-    name: '';
-    films: [];
-    bio:'';
-  }
+  Director: {
+    id:'',
+    name: '',
+    films: [],
+    bio:''
+  },
 
-  Film = {
-    id:'';
-    title:'';
-    genre:'';
-    year:'';
-    popularity:'';
+  Film:  {
+    id:'',
+    title:'',
+    genre:'',
+    year:'',
+    popularity:''
   }
 }
