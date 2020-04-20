@@ -1,3 +1,8 @@
 import { h } from 'hyperapp'
 
-export default () => h('h1', {}, 'coucou')
+export default (state) => {
+  console.log(state.directorsList)
+  return h('select', {}, [
+      h('option',{},'blabla')
+  ])
+}
