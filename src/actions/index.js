@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { h } from 'hyperapp'
 export default{
     dataLoading: (event) => state => {
         state.Director.name = event.target.value
@@ -32,8 +32,9 @@ export default{
 
         	})
       	})
-    },
-    display: (event) => (state,actions) => {
-		actions.dataLoading(event)
-	}
+    }, 
+    display: (event)=> (state,actions) =>{
+    	actions.dataLoading(event)
+
+    }
 }
