@@ -3,7 +3,8 @@ export default {
         id:'',
         name: '',
         films: [],
-        bio:''
+        bio:'',
+        birthday:''
     },
     Film:  {
         id:'',
