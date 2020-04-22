@@ -6,13 +6,6 @@ export default {
         bio:'',
         birthday:''
     },
-    Film:  {
-        id:'',
-        title:'',
-        genre:'',
-        year:'',
-        popularity:''
-    },
     directorsList:[
         {
             name: 'James Cameron',
@@ -57,10 +50,6 @@ export default {
         {
             name: 'Peter Jackson',
             id:108
-        },
-        {
-            name: 'Rocco Siffredi',
-            id: 7694
         }
     ]
 }

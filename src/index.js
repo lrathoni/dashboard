@@ -14,4 +14,3 @@ withLogger(app)(
     document.body
 )
 
-console.log('coucou')
