@@ -1,6 +1,7 @@
 import { h } from 'hyperapp'
 
-import info from '../DirInfo.js'
+import Info from '../DirInfo.js'
+import Genre from '../GenreDistribution.js'
 
 
 export default (state, actions) => h('div', {class: 'app'},[
@@ -10,10 +11,16 @@ export default (state, actions) => h('div', {class: 'app'},[
     	state.directorsList
         	.map(item => h('option', {}, item.name))
 	]),
-	info({ 
-		name: state.Director.name,birthday : state.Director.birthday, biography : state.Director.biography
+	Info({ 
+		name: state.Director.name,birthday : state.Director.birthday, biography : state.Director.bio
+	}),
+	Genre({
+        labels: ['Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery', 'Romance', 'Science-Fiction', 'Thriller', 'War', 'Western'],
+        data: [135850, 52122, 148825, 16939, 9763], //actions.getData()
+        title: 'Distribution by genres',
+        width: 800,
+        height: 400
 	})
-	//info({name: 'coucou'}),
 ])
 
 

@@ -32,6 +32,7 @@ export default{
 
         	})
       	})
+      	return {...state, Director : state.Director}
     }, 
     display: (event)=> (state,actions) =>{
     	actions.dataLoading(event)
