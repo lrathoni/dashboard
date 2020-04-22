@@ -13,5 +13,3 @@ withLogger(app)(
     view,
     document.body
 )
-
-console.log(state.Director)

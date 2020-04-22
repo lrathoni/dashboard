@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { h } from 'hyperapp'
 
 export default{
 

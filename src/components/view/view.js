@@ -1,6 +1,7 @@
 import { h } from 'hyperapp'
 
 import info from '../dirInfo.js'
+import filmSort from '../filmSort.js'
 
 
 export default (state, actions) => h('div', {class: 'app'}, [
@@ -10,7 +11,8 @@ export default (state, actions) => h('div', {class: 'app'}, [
         state.directorsList
             .map(item => h('option', {}, item.name))
     ]),
-    info(state.Director)
+    info(state.Director),
+    filmSort()
     //info({name: 'coucou'}),
 ])
 
