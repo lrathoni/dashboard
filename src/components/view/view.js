@@ -8,8 +8,9 @@ export default (state, actions) => h('div', {class: 'app'},[
 	h('h1',{class:'title'},'Director dashboard'),
 	h('label',{},'Choose a director : ',[]),
 	h('select', {class:'selectDir', onchange :(e)=>actions.dataLoading(e)}, [
+		h('option', {value : '', disabled : true, selected: true},'Director'),
     	state.directorsList
-        	.map(item => h('option', {}, item.name))
+        	.map(item => h('option', {value: item.name}, item.name))
 	]),
 	info(state.Director),
 	genre({
