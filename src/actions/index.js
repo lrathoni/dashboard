@@ -37,6 +37,5 @@ export default{
     },
     display: (event) => (state, actions) => {
         actions.dataLoading(event)
->>>>>>> bf21c617fa4f32a1ce11bb8107b6837890a4834f
     }
 }
