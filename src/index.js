@@ -14,3 +14,4 @@ withLogger(app)(
     document.body
 )
 
+console.log(state.Director)
