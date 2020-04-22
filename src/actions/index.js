@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { h } from 'hyperapp'
+
 export default{
+
     dataLoading: (event) => state => {
         state.Director.name = event.target.value
         state.Director.id  = state.directorsList.filter(item =>item.name === state.Director.name)[0].id
@@ -31,6 +33,7 @@ export default{
                 })
             })
         })
+        return {...state, Director : state.Director}
     },
     display: (event) => (state, actions) => {
         actions.dataLoading(event)
