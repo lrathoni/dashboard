@@ -4,7 +4,8 @@ export default {
         name: '',
         films: [],
         bio:'',
-        birthday:''
+        birthday:'',
+        genreSort: ''
     },
     directorsList:[
         {
@@ -51,5 +52,5 @@ export default {
             name: 'Peter Jackson',
             id:108
         }
-    ]
+    ],
 }

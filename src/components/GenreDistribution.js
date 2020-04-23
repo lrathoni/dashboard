@@ -11,13 +11,25 @@ export default (props) =>
                     data: {
                         labels: props.labels,
                         datasets: [{
-                            data: props.data
+                            data: props.data,
+                            backgroundColor: ['blue', 'green','red','yellow', 'purple', 'pink']
                         }]
                     },
-                    responsive: true
+                    options: {
+                    	title: {
+				            display: true,
+				            fontsize: 14,
+				            text: props.title,
+				        },
+				        responsive: true,
+				        legend: {
+				        	display : true,
+                            position : 'left'
+				        }
+                    }
                 })
-                c.canvas.style.height = 600 + 'px'
-                c.canvas.style.width = 1200 + 'px'
+                c.canvas.style.height = 400 + 'px'
+                c.canvas.style.width = 800 + 'px'
                 // si une fonction de callback est passé en paramètres de mes props alors je l'exécute
 
             }
