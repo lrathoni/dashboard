@@ -36,5 +36,23 @@ export default{
     },
     display: (event) => (state, actions) => {
         actions.dataLoading(event)
+    },
+
+    sort: (props) => state => {
+        for(let i = 0; i < props.length; i++){
+            //stock the index of the min in Array
+            let min = i
+            for(let j = i + 1; j < props.length; j++){
+                if(props[j].vote < props[min].vote){
+                    // Update index if inf value is found
+                    min = j
+                }
+            }
+            const tmp = props[i]
+            console.log('Je passe ici')
+            props[i] = props[min]
+            props[min] = tmp
+        }
+        return {...state, films : props}
     }
 }
