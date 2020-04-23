@@ -41,17 +41,17 @@ export default{
     sort: (props) => state => {
         for(let i = 0; i < props.length; i++){
             //stock the index of the min in Array
-            let min = i
+            let max = i
             for(let j = i + 1; j < props.length; j++){
-                if(props[j].vote < props[min].vote){
+                if(props[j].vote > props[max].vote){
                     // Update index if inf value is found
-                    min = j
+                    max = j
                 }
             }
             const tmp = props[i]
             console.log('Je passe ici')
-            props[i] = props[min]
-            props[min] = tmp
+            props[i] = props[max]
+            props[max] = tmp
         }
         return {...state, films : props}
     }
