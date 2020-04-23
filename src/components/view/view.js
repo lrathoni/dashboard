@@ -6,10 +6,10 @@ import genre from '../GenreDistribution.js'
 
 
 export default (state, actions) => h('div', {class: 'app'}, [
-    h('h1',{class:'title'}, 'Director dashboard'),
+    h('h1', {class:'title'}, 'Director dashboard'),
     h('label', {}, 'Choose a director : ', []),
     h('select', {class:'selectDir', onchange :(e)=> {actions.dataLoading(e), actions.sort(state.Director.films)}}, [
-        h('option', {value : '', disabled : true, selected: true},'Director'),
+        h('option', {value : '', disabled : true, selected: true}, 'Director'),
         state.directorsList
             .map(item => h('option', {value: item.name}, item.name))
     ]),
