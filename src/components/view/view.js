@@ -1,9 +1,11 @@
 import { h } from 'hyperapp'
 
-import info from '../DirInfo.js'
+import info from '../dirInfo.js'
+import filmSort from '../filmSort.js'
 import genre from '../GenreDistribution.js'
 
 
+<<<<<<< HEAD
 export default (state, actions) => h('div', {class: 'app'},[
 	h('h1',{class:'title'},'Director dashboard'),
 	h('label',{},'Choose a director : ',[]),
@@ -19,7 +21,8 @@ export default (state, actions) => h('div', {class: 'app'},[
         title: 'Distribution by genres',
         width: 800,
         height: 400
-	})
+    }),
+    filmSort(state.Director.films),
 ])
 
 

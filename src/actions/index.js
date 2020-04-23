@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { h } from 'hyperapp'
 
 export default{
     dataLoading: (event) => (state) => {
@@ -41,5 +40,10 @@ export default{
         actions.dataLoading(event)
         actions.getDateGenre()
         return {...state, Director : state.Director}
+    },
+
+    sort: (props) => {
+        const byVote = (a, b) => b.vote - a.vote
+        props.sort(byVote)
     }
 }
