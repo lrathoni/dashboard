@@ -6,21 +6,20 @@ import genre from '../GenreDistribution.js'
 import year from '../YearDistribution.js'
 
 export default (state, actions) => h('div', {class: 'app'}, [
-    h('h1', {class:'title'}, 'Director dashboard'),
+    h('h1', {class:'title', oncreate:e=>actions.constructGenre()}, 'Director dashboard'),
     h('label', {}, 'Choose a director : ', []),
-    h('select', {class:'selectDir', onchange :(e)=> actions.display(e)}, [
-        h('option', {value : '', disabled : true, selected: true}, 'Director'),
+    h('select', {class:'selectDir', id:'select'}, [
+        h('option', {value : '', disabled: true, selected: true}, 'Director'),
         state.directorsList
             .map(item => h('option', {value: item.name}, item.name))
     ]),
+    h('button', {onclick :e=>actions.dataLoading(e)}, 'Submit'),
     info(state.Director),
-    filmSort(state.Director.films),
     genre({
-        labels: ['Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery', 'Romance', 'Science-Fiction', 'Thriller', 'War', 'Western'],
-        data: [0, 1, 2],
-        title: 'Distribution by genres',
-        width: 800,
-        height: 400
+        abels: state.Director.genreSort.map(item=>item.name),
+        data: state.Director.genreSort.map(item=>item.count),
+        title: 'Sort by genres',
+        registerChart: actions.registerChart
     }),
     // year(state.dataYear)
     year({

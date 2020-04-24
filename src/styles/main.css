@@ -1,3 +1,51 @@
-h1{
-	color:red;
+/*body {
+	background-color: #dad9d7;
 }
+
+h1, h2 {
+	text-align: center;
+}
+
+#menu {
+      width: 100%;
+      height: 60px;
+      background: #7dccc7;
+      position: relative;
+      top: -20px;
+
+}
+
+h1{
+	position: relative;
+	top: 15px;
+}
+
+#fiche_technique, #top_film, #genre, #year{
+	  background: #ffffff;
+      box-shadow: 6px 6px 8px black;
+      position: relative;
+}
+
+#fiche_technique {
+      width: 650px;
+      height: 220px;
+	  left: 50px;
+    }
+
+#top_film {
+      width: 450px;
+      height: 220px;
+      top: -240px; left: 750px;
+    }
+
+#genre {
+      width: 550px;
+      height: 250px;
+      top: -230px; left: 50px;
+    }
+
+#year {
+      width: 550px;
+      height: 250px;
+      top: -500px; left: 650px;
+    }*/

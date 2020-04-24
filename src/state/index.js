@@ -5,7 +5,8 @@ export default {
         films: [],
         bio:'',
         birthday:'',
-        genreSort: ''
+        genreSort: [
+        ]
     },
     directorsList:[
         {
