@@ -53,4 +53,11 @@ export default {
             id:108
         }
     ],
+    dataYear : {
+        labels: ['1960', '1970', '1980', '1990', '2000', '2010', '2020'],
+        data: {title: ['frozen', 'frozen2'], year:[2013, 2019]},
+        title: 'Distibution by years',
+        width: 600,
+        height: 400
+    }
 }

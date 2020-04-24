@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default{
-    dataLoading: (event) => (state) => {
+    dataLoading: (event) => (state, actions) => {
         state.Director.name = event.target.value
         state.Director.id  = state.directorsList.filter(item =>item.name === state.Director.name)[0].id
         axios.get('https://api.themoviedb.org/3/person/' + state.Director.id + '?api_key=f88f1caf38ec9a3acf3d6c51b4bf9820&language=en-US').then(response =>{
@@ -31,14 +31,25 @@ export default{
                 })
             })
         })
-        return {...state, Director : state.Director}
+        actions.sort(state.Director.films)
+        state.dataYear = actions.getDataYear(state.Director.films)
+        return {...state, Director : state.Director, dataYear: state.dataYear}
     },
     getDataGenre:() => {
-        
+
     },
-    display:(event) => (state,actions)=>{
+
+    getDataYear: (props) => ({
+        labels: ['1960', '1970', '1980', '1990', '2000', '2010', '2020'],
+        data: { title: props.map(item => item.title), year: props.map(item => item.year)},
+        title: 'Distibution by years',
+        width: 600,
+        height: 400
+    }),
+
+    display:(event) => (state, actions)=>{
         actions.dataLoading(event)
-        actions.getDateGenre()
+        actions.getDataGenre()
         return {...state, Director : state.Director}
     },
 

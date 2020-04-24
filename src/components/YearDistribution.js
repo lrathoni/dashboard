@@ -2,17 +2,18 @@ import Chart from 'chart.js'
 import { h } from 'hyperapp'
 
 export default (props) =>
-    h('div', {class: 'genre'}, [
+    h('div', {class: 'year'}, [
         h('canvas', {
             oncreate: (element) => {
                 const ctx = element.getContext('2d')
-                const c = new Chart(ctx, {
-                    type: 'pie',
+                const chart = new Chart(ctx, {
+                    type: 'bar',
                     data: {
                         labels: props.labels,
                         datasets: [{
-                            data: props.data,
-                            backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']
+                            label : props.data.title.map(item => item.title),
+                            data : props.data.year.map(item => item.year),
+                            backgroundColor: ['purple']
                         }]
                     },
                     options: {
@@ -21,17 +22,15 @@ export default (props) =>
                             fontsize: 14,
                             text: props.title,
                         },
-                        responsive: true,
+                        responsive : true,
                         legend: {
-                            display : true,
-                            position : 'left'
+                            display:  true,
+                            position : 'right'
                         }
                     }
                 })
-                c.canvas.style.height = 400 + 'px'
-                c.canvas.style.width = 800 + 'px'
-                // si une fonction de callback est passé en paramètres de mes props alors je l'exécute
-
+                chart.canvas.style.height = props.height  + 'px'
+                chart.canvas.style.width = props.width + 'px'
             }
-        })
+        }, console.log('Dis moi que tu passes par la stp'))
     ])
