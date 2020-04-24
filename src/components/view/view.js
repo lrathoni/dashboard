@@ -12,7 +12,7 @@ export default (state, actions) => h('div', {class: 'app'}, [
         state.directorsList
             .map(item => h('option', {value: item.name}, item.name))
     ]),
-    h('button', {onclick :e=>actions.dataLoading(e)}, 'Bouton'),
+    h('button', {onclick :e=>actions.dataLoading(e)}, 'Submit'),
     info(state.Director),
     genre({
         abels: state.Director.genreSort.map(item=>item.name),
