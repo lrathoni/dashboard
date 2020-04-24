@@ -2,7 +2,8 @@ import Chart from 'chart.js'
 import { h } from 'hyperapp'
 
 export default (props) =>
-    h('div', {class: 'genre'}, [
+    h('div', {id: 'genre'}, [
+        h('h2', {}, 'Genre'),
         h('canvas', {
             oncreate: (element) => {
                 const ctx = element.getContext('2d')
@@ -12,26 +13,22 @@ export default (props) =>
                         labels: props.labels,
                         datasets: [{
                             data: props.data,
-                            backgroundColor: ['blue', 'green','red','yellow', 'purple', 'pink']
+                            backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']
                         }]
                     },
                     options: {
-                    	title: {
-				            display: true,
-				            fontsize: 14,
-				            text: props.title,
-				        },
-				        responsive: true,
-				        legend: {
-				        	display : true,
+                        title: {
+                            display: false,
+                            fontsize: 14,
+                        },
+                        responsive: true,
+                        legend: {
+                            display : true,
                             position : 'left'
-				        }
+                        }
                     }
                 })
-                c.canvas.style.height = 400 + 'px'
-                c.canvas.style.width = 800 + 'px'
-                // si une fonction de callback est passé en paramètres de mes props alors je l'exécute
-
+                props.registerChart(c)
             }
         })
     ])
