@@ -32,20 +32,34 @@ export default{
             })
         })
         actions.sort(state.Director.films)
-        state.dataYear = actions.getDataYear(state.Director.films)
-        return {...state, Director : state.Director, dataYear: state.dataYear}
+        //state.dataYear = actions.getDataYear(state.Director.films)
+        return {...state, Director : state.Director}
     },
     getDataGenre:() => {
 
     },
 
-    getDataYear: (props) => ({
-        labels: ['1960', '1970', '1980', '1990', '2000', '2010', '2020'],
-        data: { title: props.map(item => item.title), year: props.map(item => item.year)},
-        title: 'Distibution by years',
-        width: 600,
-        height: 400
-    }),
+    getDataYear: (props) => {
+        return {
+            labels: ['1960\'s', '1970\'s', '1980\'s', '1990\'s', '2000\'s', '2010\'s', '2020\'s'],
+            datasets: props.map(item => ( {label : item.title + ' ' + item.year, data: [0, 0, 0, 5, 0, 0, 0], backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']})),
+            title: 'Distibution by years',
+            width: 600,
+            height: 400
+        }
+    },
+
+    getDatabyYearPosition : (propsItem) => {
+        const arrayVote = [0, 0, 0, 0, 0, 0, 0]
+        const arrayYear = [1960, 1970, 1980, 1990, 2000, 2010, 2020, propsItem.year]
+        const byYear = (a, b) => a - b
+        arrayYear.sort(byYear)
+        arrayYear.pop()
+        const indexVote = arrayYear.find(element => element === propsItem.year)
+        arrayVote[indexVote] = propsItem.vote
+        console.log('Je l\'ai placé')
+        return arrayVote
+    },
 
     display:(event) => (state, actions)=>{
         actions.dataLoading(event)

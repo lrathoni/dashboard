@@ -54,8 +54,8 @@ export default {
         }
     ],
     dataYear : {
-        labels: ['1960', '1970', '1980', '1990', '2000', '2010', '2020'],
-        data: {title: ['frozen', 'frozen2'], year:[2013, 2019]},
+        labels: ['1960\'s', '1970\'s', '1980\'s', '1990\'s', '2000\'s', '2010\'s', '2020\'s'],
+        datasets: [{label: '', data : [0, 0, 0, 0, 0, 0, 0], backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']}],
         title: 'Distibution by years',
         width: 600,
         height: 400

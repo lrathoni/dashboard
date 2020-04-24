@@ -22,14 +22,14 @@ export default (state, actions) => h('div', {class: 'app'}, [
         width: 800,
         height: 400
     }),
-    year(state.dataYear)
-    // year({
-    //     labels: ['1960', '1970', '1980', '1990', '2000', '2010', '2020'],
-    //     data: [{title: 'Frozen', year: 2013, vote: 10}, {title: 'Frozen2', year: 2019, vote: 10}],
-    //     title: 'Distibution by years',
-    //     width: 600,
-    //     height: 400
-    // })
+    // year(state.dataYear)
+    year({
+        label: ['1960\'s', '1970\'s', '1980\'s', '1990\'s', '2000\'s', '2010\'s', '2020\'s'],
+        datasets: [{label : 'Frozen2 2019', data: [0, 0, 0, 0, 0, 8.3, 0], backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']}],
+        title: 'Distibution by years',
+        width: 600,
+        height: 400
+    })
 ])
 
 

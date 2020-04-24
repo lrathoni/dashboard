@@ -9,12 +9,13 @@ export default (props) =>
                 const chart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: props.labels,
-                        datasets: [{
-                            label : props.data.title.map(item => item.title),
-                            data : props.data.year.map(item => item.year),
-                            backgroundColor: ['purple']
-                        }]
+                        labels: props.label,
+                        datasets: props.datasets
+                        // [{
+                        //     label : props.datasets.label,
+                        //     data : props.datasets.data,
+                        //     backgroundColor: props.datasets.backgroundColor
+                        // }]
                     },
                     options: {
                         title: {
@@ -26,6 +27,14 @@ export default (props) =>
                         legend: {
                             display:  true,
                             position : 'right'
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    suggestedMin: 0,
+                                    suggestedMax: 10
+                                }
+                            }]
                         }
                     }
                 })
