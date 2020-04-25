@@ -20,21 +20,15 @@ export default{
                         actions.modifFilm(film)
                     })
                 })
-                setTimeout(()=>actions.updateChart(state.Director.genreSort), 100)
-                setTimeout(()=>actions.updateChart2(state.Director), 100)
+                setTimeout(()=>actions.updateChart(state.Director.genreSort), 1000)
+                setTimeout(()=>actions.updateChart2(state.Director), 1000)
             })
         }
         return {...state, Director : state.Director}
     },
 
-    getDataset: () => (actions, state) => {
-        return state.Director.films.map(item => (
-            {
-                label : item.title + ' ' + item.year,
-                data: actions.getDatabyYearPosition(item),
-                backgroundColor: 'blue'
-            }
-        ))
+    displayVote: (item) => {
+        return (item === 0) ? 'No rated' :  item + '/10 '
     },
 
     getDatabyYearPosition : (propsItem) => {
@@ -43,13 +37,10 @@ export default{
         else {
             const arrayVote = [0, 0, 0, 0, 0, 0, 0]
             const arrayYear = [1960, 1970, 1980, 1990, 2000, 2010, 2020, propsItem.year]
-            console.log('avant tri : ', arrayYear)
             const byYear = (a, b) => a - b
             arrayYear.sort(byYear)
-            console.log('après tri : ', arrayYear)
-            const indexVote = arrayYear.indexOf(propsItem.year)
-            console.log('index : ', indexVote)
-            arrayVote[indexVote - 1] = propsItem.vote
+            const indexVote = arrayYear.lastIndexOf(propsItem.year)
+            arrayVote[indexVote - 1] = (propsItem.vote === 0) ? -1 : propsItem.vote
             return arrayVote
         }
     },
@@ -58,7 +49,6 @@ export default{
         state.Director.bio = response.data.biography
         state.Director.birthday = response.data.birthday
         state.Director.name = response.data.name
-        console.log(state.Director)
         return state
     },
     constructGenre:()=>(state)=>{

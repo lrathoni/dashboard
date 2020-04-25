@@ -15,8 +15,8 @@ export default (props) =>
                     options: {
                         title: {
                             display: true,
-                            fontsize: 14,
-                            text: 'Distibution by years',
+                            fontsize: 20,
+                            text: 'Distibution by years (AxisX) and Vote (AxisY)',
                         },
                         responsive : true,
                         legend: {
@@ -26,7 +26,7 @@ export default (props) =>
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                    suggestedMin: 0,
+                                    suggestedMin: -1,
                                     suggestedMax: 10
                                 }
                             }]
