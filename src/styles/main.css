@@ -1,4 +1,4 @@
-/*body {
+body {
 	background-color: #dad9d7;
 }
 
@@ -27,25 +27,23 @@ h1{
 }
 
 #fiche_technique {
-      width: 650px;
-      height: 220px;
+    width: 650px;
+      
 	  left: 50px;
-    }
+}
 
 #top_film {
       width: 450px;
-      height: 220px;
       top: -240px; left: 750px;
-    }
+}
 
 #genre {
       width: 550px;
-      height: 250px;
-      top: -230px; left: 50px;
-    }
+      top: -220px; 
+      left: 50px;
+}
 
 #year {
-      width: 550px;
-      height: 250px;
+      width: 600px;
       top: -500px; left: 650px;
-    }*/
+    }

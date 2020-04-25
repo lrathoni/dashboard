@@ -2,7 +2,7 @@ import Chart from 'chart.js'
 import { h } from 'hyperapp'
 
 export default (props) =>
-    h('div', {class: 'year'}, [
+    h('div', {id: 'year'}, [
         h('canvas', {
             oncreate: (element) => {
                 const ctx = element.getContext('2d')
