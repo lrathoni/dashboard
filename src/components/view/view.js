@@ -6,14 +6,16 @@ import genre from '../GenreDistribution.js'
 import year from '../YearDistribution.js'
 
 export default (state, actions) => h('div', {class: 'app'}, [
-    h('h1', {class:'title', oncreate:()=>actions.constructGenre()}, 'Director dashboard'),
-    h('label', {}, 'Choose a director : ', []),
-    h('select', {class:'selectDir', id:'select'}, [
-        h('option', {value : '', disabled: true, selected: true}, 'Director'),
-        state.directorsList
-            .map(item => h('option', {value: item.name}, item.name))
+    h('div', {id: 'menu'}, [
+        h('h1', {class:'title', oncreate:e=>actions.constructGenre()}, 'Director dashboard'),
+        h('label', {}, 'Choose a director : ', []),
+        h('select', {class:'selectDir', id:'select'}, [
+            h('option', {value : '', disabled: true, selected: true}, 'Director'),
+            state.directorsList
+                .map(item => h('option', {value: item.name}, item.name))
+        ]),
+        h('button', {onclick :(e)=>actions.dataLoading(e)}, 'Submit'),
     ]),
-    h('button', {onclick :()=>actions.dataLoading()}, 'Submit'),
     info(state.Director),
     filmSort({
         films: state.Director.films}),

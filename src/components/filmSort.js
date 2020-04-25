@@ -2,7 +2,7 @@ import { h } from 'hyperapp'
 
 
 export default (props) => {
-    return h('div', {id : 'TopVote'}, [
+    return h('div', {id : 'top_film'}, [
         h('h2', {id:'topfilm'}, 'Top Films'),
         props.films.map(item =>
             h('p', {class : 'film'},
