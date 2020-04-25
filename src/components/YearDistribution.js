@@ -9,23 +9,18 @@ export default (props) =>
                 const chart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: props.label,
-                        datasets: props.datasets
-                        // [{
-                        //     label : props.datasets.label,
-                        //     data : props.datasets.data,
-                        //     backgroundColor: props.datasets.backgroundColor
-                        // }]
+                        labels: ['1960\'s', '1970\'s', '1980\'s', '1990\'s', '2000\'s', '2010\'s', '2020\'s', 'Undefined Year'],
+                        datasets: props.datasets,
                     },
                     options: {
                         title: {
                             display: true,
                             fontsize: 14,
-                            text: props.title,
+                            text: 'Distibution by years',
                         },
                         responsive : true,
                         legend: {
-                            display:  true,
+                            display:  false,
                             position : 'right'
                         },
                         scales: {
@@ -38,8 +33,9 @@ export default (props) =>
                         }
                     }
                 })
-                chart.canvas.style.height = props.height  + 'px'
-                chart.canvas.style.width = props.width + 'px'
+                chart.canvas.style.height = 400  + 'px'
+                chart.canvas.style.width = 600 + 'px'
+                props.registerChart2(chart)
             }
-        }, console.log('Dis moi que tu passes par la stp'))
+        })
     ])

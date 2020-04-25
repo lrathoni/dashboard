@@ -6,8 +6,10 @@ export default {
         bio:'',
         birthday:'',
         genreSort: [
-        ]
+        ],
+        datasets: []
     },
+
     directorsList:[
         {
             name: 'James Cameron',
@@ -53,12 +55,5 @@ export default {
             name: 'Peter Jackson',
             id:108
         }
-    ],
-    dataYear : {
-        labels: ['1960\'s', '1970\'s', '1980\'s', '1990\'s', '2000\'s', '2010\'s', '2020\'s'],
-        datasets: [{label: '', data : [0, 0, 0, 0, 0, 0, 0], backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']}],
-        title: 'Distibution by years',
-        width: 600,
-        height: 400
-    }
+    ]
 }

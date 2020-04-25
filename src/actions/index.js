@@ -6,45 +6,52 @@ export default{
         const select = document.querySelector('#select')
         const choice = select.selectedIndex
         const value = select.options[choice].value
-        state.Director.id  = state.directorsList.filter(item =>item.name === value)[0].id
-        axios.get('https://api.themoviedb.org/3/person/' + state.Director.id + '?api_key=f88f1caf38ec9a3acf3d6c51b4bf9820&language=en-US').then(response =>{
-            actions.modifDirector(response)
-        })
-        axios.get('https://api.themoviedb.org/3/search/person?api_key=f88f1caf38ec9a3acf3d6c51b4bf9820&language=en-US&query=' + value + '&page=1&include_adult=false').then(response =>{
-            const films = response.data.results.filter(item =>item.known_for_department === 'Directing').map(item => item.known_for)
-            state.Director.films = []
-            films.map(item => {
-                item.map(film=>{
-                    actions.modifFilm(film)
-                })
+        if (state.Director.name !== value) {
+            state.Director.id  = state.directorsList.filter(item =>item.name === value)[0].id
+            axios.get('https://api.themoviedb.org/3/person/' + state.Director.id + '?api_key=f88f1caf38ec9a3acf3d6c51b4bf9820&language=en-US').then(response =>{
+                actions.modifDirector(response)
             })
-            setTimeout(()=>actions.updateChart(state.Director.genreSort), 100)
-        })
-        actions.sort(state.Director.films)
-        //state.dataYear = actions.getDataYear(state.Director.films)
+            axios.get('https://api.themoviedb.org/3/search/person?api_key=f88f1caf38ec9a3acf3d6c51b4bf9820&language=en-US&query=' + value + '&page=1&include_adult=false').then(response =>{
+                const films = response.data.results.filter(item =>item.known_for_department === 'Directing').map(item => item.known_for)
+                state.Director.films = []
+                state.Director.datasets = []
+                films.map(item => {
+                    item.map(film=>{
+                        actions.modifFilm(film)
+                    })
+                })
+                setTimeout(()=>actions.updateChart(state.Director.genreSort), 100)
+                setTimeout(()=>actions.updateChart2(state.Director), 100)
+            })
+        }
         return {...state, Director : state.Director}
     },
 
-    getDataYear: (props) => {
-        return {
-            labels: ['1960\'s', '1970\'s', '1980\'s', '1990\'s', '2000\'s', '2010\'s', '2020\'s'],
-            datasets: props.map(item => ( {label : item.title + ' ' + item.year, data: [0, 0, 0, 5, 0, 0, 0], backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']})),
-            title: 'Distibution by years',
-            width: 600,
-            height: 400
-        }
+    getDataset: () => (actions, state) => {
+        return state.Director.films.map(item => (
+            {
+                label : item.title + ' ' + item.year,
+                data: actions.getDatabyYearPosition(item),
+                backgroundColor: 'blue'
+            }
+        ))
     },
 
     getDatabyYearPosition : (propsItem) => {
-        const arrayVote = [0, 0, 0, 0, 0, 0, 0]
-        const arrayYear = [1960, 1970, 1980, 1990, 2000, 2010, 2020, propsItem.year]
-        const byYear = (a, b) => a - b
-        arrayYear.sort(byYear)
-        arrayYear.pop()
-        const indexVote = arrayYear.find(element => element === propsItem.year)
-        arrayVote[indexVote] = propsItem.vote
-        console.log('Je l\'ai placé')
-        return arrayVote
+        if (isNaN(propsItem.year))
+            return [0, 0, 0, 0, 0, 0, 0, propsItem.vote]
+        else {
+            const arrayVote = [0, 0, 0, 0, 0, 0, 0]
+            const arrayYear = [1960, 1970, 1980, 1990, 2000, 2010, 2020, propsItem.year]
+            console.log('avant tri : ', arrayYear)
+            const byYear = (a, b) => a - b
+            arrayYear.sort(byYear)
+            console.log('après tri : ', arrayYear)
+            const indexVote = arrayYear.indexOf(propsItem.year)
+            console.log('index : ', indexVote)
+            arrayVote[indexVote - 1] = propsItem.vote
+            return arrayVote
+        }
     },
 
     modifDirector:(response) => (state)=>{
@@ -93,14 +100,25 @@ export default{
         }
         state.Director.films.push(Film)
         state.Director.films.sort(byVote)
+        state.Director.datasets.push({label : Film.title + ' ' + Film.year, data: actions.getDatabyYearPosition(Film), backgroundColor: 'blue'})
         return {...state, Director : state.Director}
     },
     registerChart:(chart)=>(state)=>{
         return {...state, Chart : chart}
     },
+
+    registerChart2:(chart2)=>(state)=>{
+        return {...state, Chart2 : chart2}
+    },
+
     updateChart:(list)=>(state)=>{
         state.Chart.data.labels = list.map(item=>item.name)
         state.Chart.data.datasets[0].data = list.map(item=>item.count)
         state.Chart.update({duration: 800})
+    },
+
+    updateChart2:()=>(state)=>{
+        state.Chart2.data.datasets = state.Director.datasets
+        state.Chart2.update({duration: 800})
     }
 }

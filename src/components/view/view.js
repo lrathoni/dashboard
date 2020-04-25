@@ -13,21 +13,18 @@ export default (state, actions) => h('div', {class: 'app'}, [
         state.directorsList
             .map(item => h('option', {value: item.name}, item.name))
     ]),
-    h('button', {onclick :e=>actions.dataLoading(e)}, 'Submit'),
+    h('button', {onclick :(e)=>actions.dataLoading(e)}, 'Submit'),
     info(state.Director),
+    filmSort(state.Director.films),
     genre({
         abels: state.Director.genreSort.map(item=>item.name),
         data: state.Director.genreSort.map(item=>item.count),
         title: 'Sort by genres',
         registerChart: actions.registerChart
     }),
-    // year(state.dataYear)
     year({
-        label: ['1960\'s', '1970\'s', '1980\'s', '1990\'s', '2000\'s', '2010\'s', '2020\'s'],
-        datasets: [{label : 'Frozen2 2019', data: [0, 0, 0, 0, 0, 8.3, 0], backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']}],
-        title: 'Distibution by years',
-        width: 600,
-        height: 400
+        datasets: state.Director.datasets,
+        registerChart2: actions.registerChart2
     })
 ])
 
