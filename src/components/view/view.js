@@ -1,7 +1,7 @@
 import { h } from 'hyperapp'
 
-import info from '../dirInfo.js'
-import filmSort from '../filmSort.js'
+import info from '../DirInfo.js'
+import filmSort from '../FilmSort.js'
 import genre from '../GenreDistribution.js'
 import year from '../YearDistribution.js'
 

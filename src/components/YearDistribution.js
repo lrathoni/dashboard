@@ -36,7 +36,7 @@ export default (props) =>
                     }
                 })
                 chart.canvas.style.height = 350  + 'px'
-                chart.canvas.style.width = 550 + 'px'
+                chart.canvas.style.width = 600 + 'px'
                 props.registerChart2(chart)
             }
         })
