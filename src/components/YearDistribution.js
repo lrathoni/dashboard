@@ -3,7 +3,7 @@ import { h } from 'hyperapp'
 
 export default (props) =>
     h('div', {id: 'year'}, [
-        h('h2',{},'Distribution by years and vote'),
+        h('h2', {}, 'Distribution by years and vote'),
         h('canvas', {
             id: 'year_chart',
             oncreate: (element) => {

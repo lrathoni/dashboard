@@ -12,10 +12,6 @@ export default {
 
     directorsList:[
         {
-            name: 'James Cameron',
-            id: 2710
-        },
-        {
             name: 'Wes Anderson',
             id: 5655
         },
@@ -32,16 +28,8 @@ export default {
             id: 2034
         },
         {
-            name: 'Christopher Nolan',
-            id: 525
-        },
-        {
-            name:'Stanley Kubrick',
-            id: 240
-        },
-        {
-            name: 'David Lynch',
-            id: 5602
+            name: 'James Cameron',
+            id: 2710
         },
         {
             name: 'David Fincher',
@@ -54,6 +42,22 @@ export default {
         {
             name: 'Peter Jackson',
             id:108
+        },
+        {
+            name:'Stanley Kubrick',
+            id: 240
+        },
+        {
+            name: 'David Lynch',
+            id: 5602
+        },
+        {
+            name: 'Hayao Miyazaki',
+            id:608
+        },
+        {
+            name: 'Christopher Nolan',
+            id: 525
         }
     ]
 }

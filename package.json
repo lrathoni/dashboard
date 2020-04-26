@@ -1,7 +1,7 @@
 {
   "name": "dahsboard",
   "version": "1.0.0",
-  "description": "dahsboard about movies and tv shows",
+  "description": "dahsboard about directors made with the movie data base api",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --color --mode development",
@@ -10,7 +10,7 @@
   "keywords": [
     "IMAC"
   ],
-  "author": "IMAC 2",
+  "author": "Chikar Louisa, Maurel Victorine, Rathonie Line, Séguy Margaux",
   "license": "ISC",
   "dependencies": {
     "@hyperapp/logger": "^0.5.0",

@@ -3,7 +3,7 @@ import { h } from 'hyperapp'
 
 export default (props) =>
     h('div', {id: 'genre'}, [
-        h('h2', {}, 'Genre'),
+        h('h2', {}, 'Distribution by genre'),
         h('canvas', {
             oncreate: (element) => {
                 const ctx = element.getContext('2d')
@@ -13,7 +13,7 @@ export default (props) =>
                         labels: props.labels,
                         datasets: [{
                             data: props.data,
-                            backgroundColor: ['blue', 'green', 'red', 'yellow', 'purple', 'pink']
+                            backgroundColor: ['#0000FF', '#26619C', '#79F8F8', '#1E7FCB', '#1E7FCB', '#A9EAFE', '#3A8EBA', '#686F8C', '#5472AE', '#0095B6', '#26C4EC', '#0F9DE8', '#17657D', '#77B5FE', '#22427C', '#00CCCB', '#24445C', '#008080', '#26C4EC']
                         }]
                     },
                     options: {

@@ -90,7 +90,7 @@ export default{
         }
         state.Director.films.push(Film)
         state.Director.films.sort(byVote)
-        state.Director.datasets.push({label : Film.title + ' ' + Film.year, data: actions.getDatabyYearPosition(Film), backgroundColor: 'blue'})
+        state.Director.datasets.push({label : Film.title + ' ' + Film.year, data: actions.getDatabyYearPosition(Film), backgroundColor: '#7dccc7'})
         return {...state, Director : state.Director}
     },
     registerChart:(chart)=>(state)=>{

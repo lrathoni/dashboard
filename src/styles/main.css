@@ -45,7 +45,7 @@ h1{
 
 #top_film {
       width: 610px;
-      height: 185px;
+      height: 195px;
       top: 500px; 
       left: 20px;
       overflow: scroll;
@@ -55,14 +55,14 @@ h1{
 #year {
       width: 610px;
       left: 650px;
+      top: 500px; 
       margin-top: 20px;
+      margin-bottom: 20px;
 }
 
 #genre {
       width: 610px;
-      top: 500px; 
       left: 650px;
-      margin-bottom: 20px;
       margin-top: 20px;
     }
 
@@ -70,64 +70,43 @@ h1{
 @media screen and (max-width: 1050px) {
 	#year {
 		left: 20px;
-		top: 710px;
+		top: 1110px;
 	}
 
 	#genre {
 		left: 20px;
-		top: 1050px;
+		top: 710px;
 	}
 }
 
 /*Taille minimale*/
-@media screen and (max-width: 500px) {
+@media all and (max-width: 500px) {
 	#fiche_technique {
+		margin: 10 auto;
+		left: auto;
 		width: 450px;
 	}
 
 	#top_film {
+		margin: 10 auto;
+		left: auto;
 		width: 450px;
-		top: 450px;
+		top: 500px;
 	}
 
 	#year {
+		margin: 10 auto;
+		left: auto;
 		width: 450px;
-		top: 650px;
+		top: 1020px;
 	}
 
 	#genre {
+		margin: 10 auto;
+		left: auto;
 		width: 450px;
 		height: 300px;
-		top: 1200px;
-	}
-}
-
-/*Mobile*/
-@media handheld and (max-width: 400px) {
-	#fiche_technique {
-		margin: 0 auto;
-		width: 380px;
-		/*left: 10px;*/
-	}
-
-	#top_film {
-		margin: 0 auto;
-		width: 380px;
-		/*left: 10px;*/
-	}
-
-	#year {
-		margin: 0 auto;
-		width: 380px;
-		/*left: 10px;*/
-	}
-
-	#genre {
-		margin: 0 auto;
-		width: 380px;
-		height: 250px;
-		/*left: 10px;*/
-		top: 850px;
+		top: 710px;
 	}
 }
 
@@ -136,23 +115,24 @@ h1{
 	#fiche_technique {
 		left: 90px;
 		width: 850px;
+		height: 500px;
 	}
 
 	#top_film {
 		left: 90px;
 		width: 850px;
-		top: 550px;
+		top: 600px;
 	}
 
 	#year {
 		left: 970px;
 		width: 850px;
+		top: 600px;
 	}
 
 	#genre {
 		left: 970px;
 		width: 850px;
-		top: 550px;
 	}
 }
 
