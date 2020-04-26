@@ -3,7 +3,9 @@ import { h } from 'hyperapp'
 
 export default (props) =>
     h('div', {id: 'year'}, [
+        h('h2',{},'Distribution by years and vote'),
         h('canvas', {
+            id: 'year_chart',
             oncreate: (element) => {
                 const ctx = element.getContext('2d')
                 const chart = new Chart(ctx, {
@@ -14,7 +16,7 @@ export default (props) =>
                     },
                     options: {
                         title: {
-                            display: true,
+                            display: false,
                             fontsize: 20,
                             text: 'Distibution by years (AxisX) and Vote (AxisY)',
                         },
@@ -33,8 +35,8 @@ export default (props) =>
                         }
                     }
                 })
-                chart.canvas.style.height = 400  + 'px'
-                chart.canvas.style.width = 600 + 'px'
+                chart.canvas.style.height = 350  + 'px'
+                chart.canvas.style.width = 550 + 'px'
                 props.registerChart2(chart)
             }
         })

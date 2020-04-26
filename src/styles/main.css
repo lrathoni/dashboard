@@ -1,9 +1,18 @@
+/*Taille écran par défaut*/
 body {
 	background-color: #dad9d7;
 }
 
 h1, h2 {
 	text-align: center;
+	font-family: fantasy;
+}
+
+p {
+	text-align: justify;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-family: sans-serif;
 }
 
 #menu {
@@ -23,27 +32,131 @@ h1{
 #fiche_technique, #top_film, #genre, #year{
 	  background: #ffffff;
       box-shadow: 6px 6px 8px black;
-      position: relative;
+      position: absolute;
 }
 
 #fiche_technique {
-    width: 650px;
-      
-	  left: 50px;
+    width: 610px;
+    height: 400px;
+    left: 20px;
+    overflow: scroll;
+    margin-top: 20px;
 }
 
 #top_film {
-      width: 450px;
-      top: -240px; left: 750px;
-}
-
-#genre {
-      width: 550px;
-      top: -220px; 
-      left: 50px;
+      width: 610px;
+      height: 185px;
+      top: 500px; 
+      left: 20px;
+      overflow: scroll;
+      margin-top: 20px;
 }
 
 #year {
-      width: 600px;
-      top: -500px; left: 650px;
+      width: 610px;
+      left: 650px;
+      margin-top: 20px;
+}
+
+#genre {
+      width: 610px;
+      top: 500px; 
+      left: 650px;
+      margin-bottom: 20px;
+      margin-top: 20px;
     }
+
+/*Taille réduite*/
+@media screen and (max-width: 1050px) {
+	#year {
+		left: 20px;
+		top: 710px;
+	}
+
+	#genre {
+		left: 20px;
+		top: 1050px;
+	}
+}
+
+/*Taille minimale*/
+@media screen and (max-width: 500px) {
+	#fiche_technique {
+		width: 450px;
+	}
+
+	#top_film {
+		width: 450px;
+		top: 450px;
+	}
+
+	#year {
+		width: 450px;
+		top: 650px;
+	}
+
+	#genre {
+		width: 450px;
+		height: 300px;
+		top: 1200px;
+	}
+}
+
+/*Mobile*/
+@media handheld and (max-width: 400px) {
+	#fiche_technique {
+		margin: 0 auto;
+		width: 380px;
+		/*left: 10px;*/
+	}
+
+	#top_film {
+		margin: 0 auto;
+		width: 380px;
+		/*left: 10px;*/
+	}
+
+	#year {
+		margin: 0 auto;
+		width: 380px;
+		/*left: 10px;*/
+	}
+
+	#genre {
+		margin: 0 auto;
+		width: 380px;
+		height: 250px;
+		/*left: 10px;*/
+		top: 850px;
+	}
+}
+
+/*Grand écran*/
+@media screen and (min-width: 1500px) {
+	#fiche_technique {
+		left: 90px;
+		width: 850px;
+	}
+
+	#top_film {
+		left: 90px;
+		width: 850px;
+		top: 550px;
+	}
+
+	#year {
+		left: 970px;
+		width: 850px;
+	}
+
+	#genre {
+		left: 970px;
+		width: 850px;
+		top: 550px;
+	}
+}
+
+
+
+
+
